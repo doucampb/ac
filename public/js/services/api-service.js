@@ -1,4 +1,11 @@
-
+/**
+ * @ngdoc   service
+ * @name    ac.main:apiService
+ * @module  ac.main
+ *
+ * @description
+ * A service which is used for making the RESTful API calls
+ */
 angular.module('ac.main').factory('apiService', function ($http, $log, $q) {
     return {
         getImageLinks: function (obfuscatedStockRef) {
