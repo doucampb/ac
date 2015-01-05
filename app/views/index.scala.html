@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-ng-app="ac.main" xmlns="http://www.w3.org/1999/html">
 <head>
     <title>Arnold Clark Technical Test</title>
 
@@ -46,17 +46,10 @@
 
     <!-- asynchronous script loading -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/labjs/2.0.3/LAB.min.js"></script>
-    <script type="text/javascript">
-        $LAB.script("https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js").wait()
-            .script("https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular-route.js")
-            .script('@routes.Assets.at("js/build/ac.main.js")')
-            .wait(function () {
-                // Bootstrap angular application
-                angular.element(document).ready(function () {
-                    angular.bootstrap(document, ['ac.main']);
-                });
-            });
-    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular-route.js"></script>
+    <script src='@routes.Assets.at("js/build/ac.main.js")'></script>
+
 </body>
 </html>
 
