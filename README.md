@@ -34,7 +34,7 @@ Javascript build
 
 ## Backend Code
 The backend code was written completely in Java and served using the play framework
-https://www.playframework.com
+
 https://www.playframework.com/documentation/2.3.x/Installing
 
 Or if your using a mac like me you can use homebrew.
