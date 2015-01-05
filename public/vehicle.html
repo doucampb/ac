@@ -1,0 +1,12 @@
+<!-- List of thumbnails -->
+<div class="thumbnails-container">
+    <img class="thumbnail-image" data-ng-repeat="image in imageUrls | filter:'350'"
+        src="{{image}}"
+        data-ng-click="setImage(image)" />
+</div>
+
+<!-- Preview container -->
+<div class="image-preview-container" data-ng-show="imagePreview">
+    <img src="{{imagePreview}}" class="image-preview" />
+</div>
+

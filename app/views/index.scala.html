@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <title>Arnold Clark Technical Test</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href='@routes.Assets.at("css/styles.css")'>
+    
+</head>
+<body id="app">
+
+<div data-ng-controller="ApplicationController" class="layout">
+
+        <form name="VehicleForm" role="form">
+            <div class="form-group">
+                <div class="form-title">Find a car</div>
+            </div>
+
+            <div class="form-group">
+                <label for="stockRef">Stock reference</label>
+
+                <input type="text" class="form-control" name="stockRef" id="stockRef" placeholder="Stock reference"
+                       data-ng-model="stockRef" required="" />
+            </div>
+
+            <div class="form-group">
+                <label for="registration">Registration</label>
+
+                <input type="text" class="form-control" name="registration" id="registration" placeholder="Registration"
+                       data-ng-model="registration" required="" />
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block" id="findCar"
+                        data-ng-disabled="VehicleForm.$invalid"
+                        data-ng-click="findCar()">
+                    Find
+                </button>
+            </div>
+        </form>
+
+
+    <div class="content" data-ng-view=""></div>
+</div>
+
+    <!-- asynchronous script loading -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/labjs/2.0.3/LAB.min.js"></script>
+    <script type="text/javascript">
+        $LAB.script("https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js").wait()
+            .script("https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular-route.js")
+            .script('@routes.Assets.at("js/build/ac.main.js")')
+            .wait(function () {
+                // Bootstrap angular application
+                angular.element(document).ready(function () {
+                    angular.bootstrap(document, ['ac.main']);
+                });
+            });
+    </script>
+</body>
+</html>
+
